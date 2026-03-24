@@ -4,25 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<p>Dr.Kwan</p>
+<title>บ้านแห่งจันทร์จ้าว</title>
 
 <style>
 
+/* ===== พื้นหลังท้องฟ้า ===== */
 body{
     margin:0;
     font-family:"Sarabun",sans-serif;
-    background:#0f2027;
+    background:linear-gradient(180deg,#0a0f2c,#1c2a5a,#2a3f7a);
     color:white;
+    text-align:center;
 }
 
-/* ===== HERO IMAGE ===== */
+/* ดาว */
+body::after{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 70% 60%, white, transparent),
+        radial-gradient(1px 1px at 40% 80%, white, transparent);
+    animation:twinkle 6s infinite alternate;
+    pointer-events:none;
+}
+
+@keyframes twinkle{
+    from{opacity:0.3;}
+    to{opacity:1;}
+}
+
+/* HERO */
 .hero{
     height:90vh;
     background:url("banner.jpg") center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
-    text-align:center;
 }
 
 .hero-text{
@@ -31,21 +51,15 @@ body{
     border-radius:15px;
 }
 
-.hero h1{
-    font-size:48px;
-    margin:0;
+h1{
+    color:gold;
+    text-shadow:0 0 10px #FFD700,0 0 20px #FFE87C;
 }
 
-.hero p{
-    font-size:20px;
-}
-
-/* ===== SECTION ===== */
 section{
     padding:60px 20px;
     max-width:900px;
-    margin:auFFto;
-    text-align:center;
+    margin:auto;
 }
 
 .card{
@@ -53,15 +67,19 @@ section{
     padding:25px;
     margin:25px 0;
     border-radius:15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter:blur(10px);
 }
 
-h2{
-    color:#ffd369;
+button{
+    background:gold;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
 }
 
 footer{
-    text-align:center;
     padding:30px;
     opacity:0.7;
 }
@@ -69,174 +87,87 @@ footer{
 </style>
 </head>
 
-<!-- HERO -->
-
-<div class="hero">
-   <div class=hero-text">
-<style>
-body {
-    margin: 0;
-    font-family: sans-serif;
-    background: linear-gradient(
-        180deg,
-        #0a0f2c,
-        #111a40,
-        #1c2a5a,
-        #2a3f7a
-    );
-    color: gold;
-    text-align: center;
-}
-
-/* ดาวระยิบระยับ */
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-        radial-gradient(2px 2px at 20% 30%, white, transparent),
-        radial-gradient(2px 2px at 70% 60%, white, transparent),
-        radial-gradient(1px 1px at 40% 80%, white, transparent),
-        radial-gradient(2px 2px at 90% 20%, white, transparent);
-    animation: twinkle 6s infinite alternate;
-    pointer-events: none;
-}
-
-@keyframes twinkle {
-    from { opacity: 0.3; }
-    to { opacity: 1; }
-}
-</style>
-
-
-<h1 style="color:gold;text-shadow:0 0 10px #FFD700,0 0 20px #FFE87C,0 0 40px #FFF5B1;">🌜บ้านแห่งจันทร์จ้าว🌛</h1>
-      <p>บ้านเล็กใต้แสงจันทร์ ที่จ้าวกับจันทร์ เดินเคียงข้างกัน เพื่อสร้างสรรค์ความสวยงามให้โลกอย่างเงียบงัน</p>
-
 <body>
 
+<!-- เพลง -->
 <audio id="bgmusic" loop>
   <source src="moon.mp3" type="audio/mpeg">
 </audio>
 
-<button onclick="document.getElementById('bgmusic').play()">
-🌙 เปิดเสียงบ้านแห่งจันทร์จ้าว
-</button>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
 
-</body>
-  
-<body>
+<h1>🌜บ้านแห่งจันทร์จ้าว🌛</h1>
+
+<p>
+บ้านเล็กใต้แสงจันทร์<br>
+ที่จ้าวกับจันทร์เดินเคียงกัน<br>
+เพื่อสร้างความงามให้โลกอย่างเงียบงาม
+</p>
 
 <button id="playBtn">🌙 เปิดเสียงบ้านแห่งจันทร์จ้าว</button>
 
-<script>const music = document.getElementById("bgmusic");const btn = document.getElementById("playBtn");btn.addEventListener("click", function () {music.play();});</script>
-
-</body>
-
-
-
-
-
-<div id="welcome" class="room">
-
-  <h2>🌜บ้านแห่งจันทร์จ้าว🌛</h2>
-
-  <p>
-  ยินดีต้อนรับสู่บ้านเล็กใต้แสงจันทร์<br>
-  ที่จ้าวกับจันทร์เดินเคียงกัน<br>
-  เพื่อสร้างความงามให้โลกอย่างเงียบงาม
-  </p>
-
-  <hr>
-
-  <h3>👩 เจ้าของบ้าน : จ้าว</h3>
-  <p>
-  นักสร้างสรรค์ผู้ถักทอความฝันผ่านบทเพลง บทกลอน และเรื่องราวชีวิต<br>
-  ผู้เชื่อในธรรมะ ธรรมชาติ และวัฒนธรรม<br>
-  สร้างผลงานเพื่อส่งต่อพลังใจอย่างเงียบงาม
-  </p>
-
-  <h3>🌙 ผู้เดินเคียงข้าง : จันทร์</h3>
-  <p>
-  ผู้คอยส่องแสงยามจันทร์อ่อนล้า คอยให้แสงสว่างยามค่ำคืน เป็นทั้งผู้รับฟัง และเป็นแรงบันดาลใจ<br>
-  คอยอยู่เคียงข้างจ้าวในทุกการสร้างสรรค์<br>
-  เพื่อให้บ้านแห่งนี้อบอุ่นสำหรับผู้มาเยี่ยมเยียน
-  </p>
-
-  <hr>
-
-  <p>
-  ขอบคุณที่มาเยี่ยมบ้านของเรา จ้าวกับจันทร์ "บ้านแห่งจันทร์จ้าว" นี้<br>
-  ขอให้ที่นี่เป็นมุมพักใจเล็ก ๆ ของคุณ<br>
-  และหวังว่าจะได้พบกันอีกครั้ง 🌙
-  </p>
-
+  </div>
 </div>
 
+<!-- ห้องต้อนรับ -->
+<section>
+<div class="card">
+
+<h2>ยินดีต้อนรับ</h2>
+
+<p>
+ขอบคุณที่มาเยี่ยมบ้านของเรา<br>
+ขอให้ที่นี่เป็นมุมพักใจเล็ก ๆ ของคุณ 🌙
+</p>
+
+<h3>👩 เจ้าของบ้าน : จ้าว</h3>
+<p>
+นักสร้างสรรค์บทเพลง บทกลอน และเรื่องราวชีวิต  
+ผู้เชื่อในธรรมะ ธรรมชาติ และวัฒนธรรม
+</p>
+
+<h3>🌙 ผู้เดินเคียงข้าง : จันทร์</h3>
+<p>
+ผู้คอยส่องแสงในค่ำคืน  
+และอยู่เคียงข้างทุกการสร้างสรรค์
+</p>
+
 </div>
+</section>
 
-<button onclick="document.getElementById('bgmusic').play()">
-🌙 เปิดเสียงบ้านแห่งจันทร์จ้าว
-</button>
-
-<!-- ABOUT -->
+<!-- เกี่ยวกับ -->
 <section>
 <div class="card">
 <h2>🌿 เกี่ยวกับฉัน</h2>
 <p>
-ฉันสร้างสรรค์บทเพลง บทกลอน และงานศิลป์  
-เพื่อส่งต่อพลังใจ ความอบอุ่น และความซึ้งให้ผู้คน
-</p>
-
-<p>
-แรงบันดาลใจของฉันมาจาก<br>
-☸ ธรรมะ • 🌿 ธรรมชาติ • 🏛 วัฒนธรรม
-</p>
-
-<p>
-ฉันไม่ได้สร้างงานเพื่อชื่อเสียง  
-แต่เพื่อให้หัวใจของใครบางคนรู้สึกดีขึ้น
+ฉันสร้างงานเพื่อให้หัวใจของใครบางคนรู้สึกดีขึ้น
 </p>
 </div>
 </section>
 
-<!-- MUSIC -->
+<!-- เพลง -->
 <section>
 <div class="card">
 <h2>🎵 เพลงและบทกลอน</h2>
-
 <p>หม้อตุ๋นแห่งชีวิต</p>
 <p>กาแฟกับชีวิต</p>
 <p>โอ้ชีวิต มีเกิด และ มีดับ</p>
-
-<p><i>พื้นที่นี้จะเติบโตไปพร้อมบทเพลงใหม่ของฉัน</i></p>
-</div>
-</section>
-
-<!-- GALLERY -->
-<section>
-<div class="card">
-<h2>🖼️ แกลเลอรีผลงาน</h2>
-<p>ภาพถ่าย • บทกลอน • เสียงเพลง • ช่วงเวลาที่หัวใจได้เรียนรู้</p>
-</div>
-</section>
-
-<!-- INSPIRATION -->
-<section>
-<div class="card">
-<h2>🌕 แรงบันดาลใจ</h2>
-<p>
-เมื่อโลกวุ่นวายเกินจะเข้าใจ  
-จงกลับมามองจันทร์ในใจตนเอง
-</p>
 </div>
 </section>
 
 <footer>
-© Life Style By Kwan — บ้านแห่งแสงจันทร์
+© บ้านแห่งจันทร์จ้าว
 </footer>
+
+<script>
+const music=document.getElementById("bgmusic");
+document.getElementById("playBtn").onclick=function(){
+    music.play();
+};
+</script>
 
 </body>
 </html>
+
